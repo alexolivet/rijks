@@ -1,0 +1,39 @@
+pre {
+  border: 0;
+  background: transparent;
+}
+
+section, button[data-action=run] {
+  margin-bottom: 30px;
+}
+
+.form-group button[data-action=run] {
+	margin-bottom: 0; /* reset margin for form groups */
+}
+
+.form-inline .form-group {
+	margin-bottom: 20px;
+}
+
+.example3-container td {
+	cursor: pointer;
+
+}
+
+.table-striped.example3-container tr:hover td {
+	cursor: pointer;
+	background-color: #f0f0f0;
+}
+
+
+
+
+.example3-container td:first-child {
+	width: 128px;
+}
+
+.thumb {
+	width: 128px;
+	height: 128px;
+	background-size: cover;
+}

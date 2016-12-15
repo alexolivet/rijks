@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<title>Rijks api</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<section>
+			<h3>Example: searching the collection</h3>
+			<pre>
+				<code data-code="#example3">
+				</code>
+			</pre>
+			<div>
+				<form>
+					<div>
+						<label  >search detail</label>
+						<input id="query" type="search"  placeholder="ex. 'rembrandt'" />
+					</div>
+					<div>
+						<button data-action="run" 
+						data-code="#example3" 
+						data-target="#example3-container"
+						>search</button>
+					</div>
+				</form>
+			</div>
+			<table id="example3-container">
+			</table>
+		</section>        
+	</div>
+	<script src="jquery-1.10.2.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
