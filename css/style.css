@@ -1,39 +1,113 @@
-pre {
-  border: 0;
-  background: transparent;
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 320px;
+    background-color: #F8F4D7;
 }
 
-section, button[data-action=run] {
-  margin-bottom: 30px;
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #E98977;
+    font-weight: bold;
+    background-color: #F4DEC2;
+    text-align: center;
 }
 
-.form-group button[data-action=run] {
-	margin-bottom: 0; /* reset margin for form groups */
+img ,canvas{
+
+    border-radius: 5px;
+    padding: 0 auto;
+    border: 1px solid #999999;
+    margin-bottom: 10px;
 }
 
-.form-inline .form-group {
-	margin-bottom: 20px;
+#result {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #E98977;
+    font-weight: bold;
+    font-family: 'Arimo', sans-serif;
 }
 
-.example3-container td {
-	cursor: pointer;
-
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.table-striped.example3-container tr:hover td {
-	cursor: pointer;
-	background-color: #f0f0f0;
+.outer-input-div {
+    margin: 0 auto;
+}
+
+.inner-input-div {
+    padding: 20px;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#query, #search {
+    width: 80%;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#search {
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 20px;
+    background-color: #F2B4A8;
+    color: white;
+}
+
+#query {
+    display: inline-block;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    padding: 8px 4px;
+    font-size: 12px;
+    color: #E98977;
+    min-width: 180px;
 }
 
 
 
+canvas#viewport { border: 1px solid white; width: 900px; }
 
-.example3-container td:first-child {
-	width: 128px;
+@media screen and (min-width: 480px) {
+    #query {
+        font-size: 14px;
+    }
 }
 
-.thumb {
-	width: 128px;
-	height: 128px;
-	background-size: cover;
+@media screen and (min-width: 640px) {
+    #query {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #query {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #query {
+        font-size: 20px;
+    }
+    #wrapper {
+        width: 1024px;
+    }
 }

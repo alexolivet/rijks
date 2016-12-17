@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<head>
-	<title>Rijks api</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<div id="wrapper">
-		<section>
-			<h3>Example: searching the collection</h3>
-			<pre>
-				<code data-code="#example3">
-				</code>
-			</pre>
-			<div>
-				<form>
-					<div>
-						<label  >search detail</label>
-						<input id="query" type="search"  placeholder="ex. 'rembrandt'" />
-					</div>
-					<div>
-						<button data-action="run" 
-						data-code="#example3" 
-						data-target="#example3-container"
-						>search</button>
-					</div>
-				</form>
-			</div>
-			<table id="example3-container">
-			</table>
-		</section>        
-	</div>
-	<script src="jquery-1.10.2.min.js"></script>
-	<script src="main.js"></script>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rijksmuseum API Demo</title>
+        <meta name="description" content="Rijksmuseum API">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="author" content="Alex Olivet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Oswald%7CCoiny%7CArimo" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Rijksmuseum API Demo</h1>
+            </header>
+            
+
+          <div class="outer-input-div">
+            <div class="inner-input-div">
+              <input id="query" type="search" placeholder="Artist, Painting, or anything!">
+              <input type="button" value="Search" id="search">
+            </div>
+          </div>
+            
+        <div id="result"></div>
+
+       <p id="drawing1"></p>
+       <p>Canvas:</p>
+<canvas id="myCanvas" width="400" height="525" style="border:1px solid #d3d3d3;">
+               
+        <script type="text/javascript" src="js/script.js"></script>
+            
+        </div>
+
+ 
+    </body>
 </html>
