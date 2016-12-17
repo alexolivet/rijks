@@ -42,7 +42,7 @@ function doSearch() {
                 //resultDiv.appendChild(rImg);
                 document.getElementById('drawing1').appendChild(rImg);
                 resultDiv.innerHTML += data.artObjects[artObj].title;
-                resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
+                //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
               }
             });
 };
