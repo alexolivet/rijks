@@ -9,9 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Oswald%7CCoiny%7CArimo" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     </head>
     
-    <body>
+    <body onload="init()">
         <div id="wrapper">
             <header>
                 <h1>Rijksmuseum API Demo</h1>
@@ -28,8 +29,20 @@
         <div id="result"></div>
 
        <p id="drawing1"></p>
-<canvas id="myCanvas" width="400" height="525" style="border:1px solid #d3d3d3;">
-               
+ <canvas id="myCanvas" width="400" height="400" style="position:relative;top:10%;left:10%;border:2px solid;"></canvas>
+ <div style="position:relative;top:12%;left:43%;">Choose Color</div>
+        <div style="position:relative;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
+        <div style="position:relative;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
+        <div style="position:relative;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
+        <div style="position:relative;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
+        <div style="position:relative;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
+        <div style="position:relative;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
+        <div style="position:relative;top:20%;left:43%;">Eraser</div>
+        <div style="position:relative;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+        <img id="canvasimg" style="position:relative;top:10%;left:52%;" style="display:none;">
+        <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
+        <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+
         <script type="text/javascript" src="js/script.js"></script>
             
         </div>
