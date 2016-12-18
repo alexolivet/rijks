@@ -48,7 +48,8 @@ function doSearch() {
             });
 };
 }
-
+//canvas drawing
+//please see url for deatils: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
     var canvas, ctx, flag = false,
         prevX = 0,
         currX = 0,
