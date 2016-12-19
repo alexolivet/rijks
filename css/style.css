@@ -1,24 +1,74 @@
-html, body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 320px;
-    background-color: #F8F4D7;
+body{
+margin:0;
+padding:0;
+line-height: 1.5em;
+}
+
+b{font-size: 110%;}
+em{color: red;}
+
+#topsection{
+background: #EAEAEA;
+height: 90px; /*Height of top section*/
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin: 0 200px 0 25%; /*Margins for content column. Should be "0 right-column-width 0 left-column-width*/
+}
+
+#leftcolumn{
+float: left;
+width: 25%; /*Width of left column in percentage*/
+margin-left: -100%;
+background: #C8FC98;
+}
+
+#rightcolumn{
+float: left;
+width: 200px; /*Width of right column in pixels*/
+margin-left: -200px; /*Set margin to -(RightColumnWidth)*/
+background: #FDE95E;
+}
+
+#footer{
+clear: left;
+width: 100%;
+background: black;
+color: #FFF;
+text-align: center;
+padding: 4px 0;
+}
+
+#footer a{
+color: #FFFF80;
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
 }
 
 h1 {
-    color: green;
+    font-family: 'Oswald', sans-serif;
+    color: #E98977;
     font-weight: bold;
-    background-color: white;
+    background-color: #F4DEC2;
     text-align: center;
-    border-radius: 5px;
 }
 
 
 canvas{
-
-
+position: relative;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -26,21 +76,12 @@ canvas{
   align-items: right;
 }
 #result {
-    float:left;
+position: relative;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: left;
     font-size: 20px;
     color: #E98977;
     font-weight: bold;
     font-family: 'Arimo', sans-serif;
-}
-
-#wrapper {
-    width: 100%;
-    margin: 0 auto;
 }
 
 #drawing1 {
@@ -91,29 +132,34 @@ display: none;
 
 canvas#viewport { border: 1px solid white; width: 900px; }
 
-@media screen and (min-width: 480px) {
-    #query {
-        font-size: 14px;
+/* ####### responsive layout CSS ####### */
+
+@media (max-width: 840px){ /* 1st level responsive layout break point- drop right column down*/
+
+    #leftcolumn{
+    margin-left: -100%;
+    }
+    
+    #rightcolumn{
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    clear: both;
+    }
+    
+    #contentcolumn{
+    margin-right: 0;
     }
 }
-
-@media screen and (min-width: 640px) {
-    #query {
-        font-size: 16px;
+@media (max-width: 600px){ /* 2nd level responsive layout break point- drop left column down */
+    #leftcolumn{
+    float: none;
+    width: 100%;
+    clear: both;
+    margin-left: 0;
     }
-}
-
-@media screen and (min-width: 800px) {
-    #query {
-        font-size: 18px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    #query {
-        font-size: 20px;
-    }
-    #wrapper {
-        width: 1024px;
+    
+    #contentcolumn{
+    margin-left: 0;
     }
 }
