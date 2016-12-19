@@ -74,7 +74,7 @@ em {
     position: relative;
 
     left: 45%;
-      width: 30px;
+    width: 30px;
     height: 30px;
     margin-bottom: 10px;
     background: blue;
@@ -92,7 +92,7 @@ em {
     position: relative;
 
     left: 45%;
-      width: 30px;
+    width: 30px;
     height: 30px;
     margin-bottom: 10px;
     background: yellow;
@@ -101,7 +101,7 @@ em {
     position: relative;
     top: 17%;
     left: 45%;
-      width: 30px;
+    width: 30px;
     height: 30px;
     margin-bottom: 10px;
     background: orange;
@@ -110,7 +110,7 @@ em {
     position: relative;
 
     left: 45%;
-       width: 30px;
+    width: 30px;
     height: 30px;
     margin-bottom: 10px;
     background: black;
@@ -128,7 +128,7 @@ em {
 #color_text {
     position: relative;
 
-   left: 45%;
+    left: 45%;
 }
 #eraser {
     position: relative;
@@ -148,6 +148,8 @@ em {
 canvas {
     position: relative;
     margin: 0 auto;
+    left:10%;
+    border:6px solid;
 }
 #result {
     position: relative;
@@ -212,6 +214,9 @@ canvas {
     }
     #contentcolumn {
         margin-right: 0;
+    }
+    canvas{
+        float: left;
     }
 }
 @media (max-width: 600px) {

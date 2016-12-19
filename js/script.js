@@ -27,20 +27,20 @@ function doSearch() {
         search(searchString).done(function(data) { //.done is similar to the success callback 
             for (let artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
                 //The let statement declares a block scope local variable, optionally initializing it to a value.
-                var rImg = document.createElement("img");
-                rImg.setAttribute("id", "drawing");
-                rImg.setAttribute("width", "400");
-                rImg.setAttribute("height", "400");
-                rImg.setAttribute("crossOrigin", "Anonymous");
+                var rImg = document.createElement("img"); //create an image element
+                rImg.setAttribute("id", "drawing"); //set attributes
+                rImg.setAttribute("width", "400");//set width
+                rImg.setAttribute("height", "400");//set height
+                rImg.setAttribute("crossOrigin", "Anonymous"); //needed so I can actually copy the image for later use
                 setTimeout(function() { //timeout for image load to canvas - start
                     var c = document.getElementById("myCanvas"); //declare the canvas
                     var ctx = c.getContext("2d"); //this is needed for canvas
                     var img = document.getElementById("drawing"); //this is the source image
-                    ctx.drawImage(img, 0, 0, 640, 480); //border and canvas size
+                    ctx.drawImage(img, 1,0, 640, 480); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
-                document.getElementById('drawing1').appendChild(rImg);
+                document.getElementById('drawing1').appendChild(rImg);//append image to paragraph id drawing1
                 resultDiv.innerHTML += data.artObjects[artObj].title;
                 //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
             }
