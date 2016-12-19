@@ -1,97 +1,168 @@
-body{
-margin:0;
-padding:0;
-line-height: 1.5em;
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
 }
-
-b{font-size: 110%;}
-em{color: red;}
-
-#topsection{
-background: #EAEAEA;
-height: 90px; /*Height of top section*/
+b {
+    font-size: 110%;
 }
-
-#topsection h1{
-margin: 0;
-padding-top: 15px;
+em {
+    color: red;
 }
-
-#contentwrapper{
-float: left;
-width: 100%;
+#topsection {
+    background: #EAEAEA;
+    height: 90px;
+    /*Height of top section*/
 }
-
-#contentcolumn{
-margin: 0 200px 0 25%; /*Margins for content column. Should be "0 right-column-width 0 left-column-width*/
+#topsection h1 {
+    margin: 0;
+    padding-top: 15px;
 }
-
-#leftcolumn{
-float: left;
-width: 25%; /*Width of left column in percentage*/
-margin-left: -100%;
-background: #C8FC98;
+#contentwrapper {
+    float: left;
+    width: 100%;
 }
-
-#rightcolumn{
-float: left;
-width: 200px; /*Width of right column in pixels*/
-margin-left: -200px; /*Set margin to -(RightColumnWidth)*/
-background: #FDE95E;
+#contentcolumn {
+    margin: 0 200px 0 25%;
+    /*Margins for content column. Should be "0 right-column-width 0 left-column-width*/
 }
-
-#footer{
-clear: left;
-width: 100%;
-background: black;
-color: #FFF;
-text-align: center;
-padding: 4px 0;
+#leftcolumn {
+    float: left;
+    width: 25%;
+    /*Width of left column in percentage*/
+    
+    margin-left: -100%;
+    background: #C8FC98;
 }
-
-#footer a{
-color: #FFFF80;
+#rightcolumn {
+    float: left;
+    width: 200px;
+    /*Width of right column in pixels*/
+    
+    margin-left: -200px;
+    /*Set margin to -(RightColumnWidth)*/
+    
+    background: #FDE95E;
 }
-
-.innertube{
-margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
-margin-top: 0;
-}
-
-h1 {
-    font-family: 'Oswald', sans-serif;
-    color: #E98977;
-    font-weight: bold;
-    background-color: #F4DEC2;
+#footer {
+    clear: left;
+    width: 100%;
+    background: black;
+    color: #FFF;
     text-align: center;
+    padding: 4px 0;
 }
+#footer a {
+    color: #FFFF80;
+}
+.innertube {
+    margin: 10px;
+    /*Margins for inner DIV inside each column (to provide padding)*/
+    
+    margin-top: 0;
+}
+#green {
+    position: relative;
 
+    left: 45%;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: green;
+}
+#blue {
+    position: relative;
 
-canvas{
-position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  align-items: right;
+    left: 45%;
+      width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: blue;
+}
+#red {
+    position: relative;
+
+    left: 45%;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: red;
+}
+#yellow {
+    position: relative;
+
+    left: 45%;
+      width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: yellow;
+}
+#orange {
+    position: relative;
+    top: 17%;
+    left: 45%;
+      width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: orange;
+}
+#black {
+    position: relative;
+
+    left: 45%;
+       width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    background: black;
+}
+#white {
+    position: relative;
+
+    left: 45%;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    background: white;
+    border: 2px solid;
+}
+#color_text {
+    position: relative;
+
+   left: 45%;
+}
+#eraser {
+    position: relative;
+
+    left: 45%;
+}
+#btn {
+    position: relative;
+    top: 55%;
+    left: 10%;
+}
+#clr {
+    position: relative;
+    top: 55%;
+    left: 15%;
+}
+canvas {
+    position: relative;
+    margin: 0 auto;
 }
 #result {
-position: relative;
+    position: relative;
     margin: 0 auto;
     font-size: 20px;
     color: #E98977;
     font-weight: bold;
     font-family: 'Arimo', sans-serif;
 }
-
 #drawing1 {
-display: none;
+    display: none;
 }
-
 .outer-input-div {
     margin: 0 auto;
 }
-
 .inner-input-div {
     padding: 20px;
     margin: 0 auto;
@@ -101,14 +172,13 @@ display: none;
     justify-content: center;
     align-items: center;
 }
-
-#query, #search {
+#query,
+#search {
     width: 80%;
     outline: none;
     border-radius: 5px;
     margin: 5px 0;
 }
-
 #search {
     border: none;
     cursor: pointer;
@@ -117,7 +187,6 @@ display: none;
     background-color: #F2B4A8;
     color: white;
 }
-
 #query {
     display: inline-block;
     border: 1px solid #cccccc;
@@ -127,39 +196,34 @@ display: none;
     color: #E98977;
     min-width: 180px;
 }
-
-
-
-canvas#viewport { border: 1px solid white; width: 900px; }
-
 /* ####### responsive layout CSS ####### */
 
-@media (max-width: 840px){ /* 1st level responsive layout break point- drop right column down*/
-
-    #leftcolumn{
-    margin-left: -100%;
-    }
+@media (max-width: 840px) {
+    /* 1st level responsive layout break point- drop right column down*/
     
-    #rightcolumn{
-    float: none;
-    width: 100%;
-    margin-left: 0;
-    clear: both;
+    #leftcolumn {
+        margin-left: -100%;
     }
-    
-    #contentcolumn{
-    margin-right: 0;
+    #rightcolumn {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        clear: both;
+    }
+    #contentcolumn {
+        margin-right: 0;
     }
 }
-@media (max-width: 600px){ /* 2nd level responsive layout break point- drop left column down */
-    #leftcolumn{
-    float: none;
-    width: 100%;
-    clear: both;
-    margin-left: 0;
-    }
+@media (max-width: 600px) {
+    /* 2nd level responsive layout break point- drop left column down */
     
-    #contentcolumn{
-    margin-left: 0;
+    #leftcolumn {
+        float: none;
+        width: 100%;
+        clear: both;
+        margin-left: 0;
+    }
+    #contentcolumn {
+        margin-left: 0;
     }
 }
