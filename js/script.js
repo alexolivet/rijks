@@ -33,9 +33,10 @@ function doSearch() {
                 rImg.setAttribute("crossOrigin", "Anonymous"); //needed so I can actually copy the image for later use
                 setTimeout(function() { //timeout for image load to canvas - start
                     var c = document.getElementById("myCanvas"); //declare the canvas
-                    var ctx = c.getContext("2d"); //this is needed for canvas 
+
+                    var ctx = c.getContext("2d"); //this is needed for canvas  
                     var img = document.getElementById("drawing"); //this is the source image
-                    ctx.drawImage(img, 0,0, 640, 480); //border and canvas size
+                    ctx.drawImage(img, 1,1, 640, 480); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
@@ -52,16 +53,11 @@ function reLoad() {
         location.reload();
     }
 
-//canvas resize function
-  function resize(){    
-    $("#myCanvas").outerHeight($(window).height()-$("#myCanvas").offset().top- Math.abs($("#myCanvas").outerHeight(true) - $("#myCanvas").outerHeight()));
-  }
-  $(document).ready(function(){
-    resize();
-    $(window).on("resize", function(){                      
-        resize();
-    });
-  });
+// //Use the disable text selection on the canvas.
+// //this is to avoid that the cursor becomes a text cursor.
+// canvas.onselectstart = function () { return false; } // ie
+// canvas.onmousedown = function () { return false; } // mozilla
+
 
     //canvas drawing
     //please see url for deatils: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse

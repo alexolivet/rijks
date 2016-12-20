@@ -3,12 +3,6 @@ body {
     padding: 0;
     line-height: 1.5em;
 }
-b {
-    font-size: 110%;
-}
-em {
-    color: red;
-}
 #topsection {
     background: #EAEAEA;
     height: 90px;
@@ -146,12 +140,11 @@ em {
     left: 15%;
 }
 canvas {
-    position: relative;
     margin: 0 auto;
-    left:10%;
     border:6px solid;
     max-width: 100%;  
-height: auto
+height: auto;
+cursor: pointer;
 }
 #result {
     position: relative;
@@ -168,25 +161,18 @@ height: auto
     margin: 0 auto;
 }
 .inner-input-div {
-    padding: 20px;
     margin: 0 auto;
     width: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 #query,
 #search {
     width: 80%;
     outline: none;
     border-radius: 5px;
-    margin: 5px 0;
 }
 #search {
     border: none;
     cursor: pointer;
-    padding: 8px 16px;
     font-size: 20px;
     background-color: #F2B4A8;
     color: white;
@@ -195,7 +181,6 @@ height: auto
     display: inline-block;
     border: 1px solid #cccccc;
     font-weight: bold;
-    padding: 8px 4px;
     font-size: 12px;
     color: #E98977;
     min-width: 180px;
