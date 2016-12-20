@@ -51,13 +51,10 @@ body {
 }
 .innertube {
     margin: 10px;
-    /*Margins for inner DIV inside each column (to provide padding)*/
-    
     margin-top: 0;
 }
 #green {
     position: relative;
-
     left: 45%;
     width: 30px;
     height: 30px;
@@ -66,7 +63,6 @@ body {
 }
 #blue {
     position: relative;
-
     left: 45%;
     width: 30px;
     height: 30px;
@@ -75,7 +71,6 @@ body {
 }
 #red {
     position: relative;
-
     left: 45%;
     width: 30px;
     height: 30px;
@@ -84,7 +79,6 @@ body {
 }
 #yellow {
     position: relative;
-
     left: 45%;
     width: 30px;
     height: 30px;
@@ -102,7 +96,6 @@ body {
 }
 #black {
     position: relative;
-
     left: 45%;
     width: 30px;
     height: 30px;
@@ -111,7 +104,6 @@ body {
 }
 #white {
     position: relative;
-
     left: 45%;
     width: 40px;
     height: 40px;
@@ -121,12 +113,10 @@ body {
 }
 #color_text {
     position: relative;
-
     left: 45%;
 }
 #eraser {
     position: relative;
-
     left: 45%;
 }
 #btn {
@@ -141,10 +131,10 @@ body {
 }
 canvas {
     margin: 0 auto;
-    border:6px solid;
-    max-width: 100%;  
-height: auto;
-cursor: pointer;
+    border: 6px solid;
+    max-width: 100%;
+    height: auto;
+    cursor: crosshair;
 }
 #result {
     position: relative;
@@ -202,7 +192,7 @@ cursor: pointer;
     #contentcolumn {
         margin-right: 0;
     }
-    canvas{
+    canvas {
         float: left;
     }
 }

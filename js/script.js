@@ -1,6 +1,8 @@
 //variable to build url to rijksmuseum
 var baseURL = "https://www.rijksmuseum.nl/api/en/collection/"
 var apiKey = "?key=r4nzV2tL&imgonly=true&format=json&ps=1"
+var apiKey2 = "?key=r4nzV2tL&imgonly=true&format=json&ps=2"
+var apiKey3 = "?key=r4nzV2tL&imgonly=true&format=json&ps=3"
     //this is the search button on htnl page
 var searchBtn = document.getElementById("search");
 //add event on button
@@ -9,9 +11,19 @@ searchBtn.addEventListener("click", doSearch);
 var resultDiv = document.getElementById("result");
 //this is the search value added to url
 var searchField = document.getElementById("query");
+//get time
+var time = new Date().getHours();
 // search the collection using a JSON call
 function search(query) {
-        return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
+        if (time < 10) {
+            return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
+        } else if (time < 20) {
+            return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
+        } else {
+            return $.getJSON(baseURL + apiKey3 + "&q=Q".replace("Q", query));
+        }
+
+
     }
     //search function
 function doSearch() {
@@ -28,19 +40,18 @@ function doSearch() {
             for (var artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
                 var rImg = document.createElement("img"); //create an image element
                 rImg.setAttribute("id", "drawing"); //set attributes
-                rImg.setAttribute("width", "400");//set width
-                rImg.setAttribute("height", "400");//set height
+                rImg.setAttribute("width", "400"); //set width
+                rImg.setAttribute("height", "400"); //set height
                 rImg.setAttribute("crossOrigin", "Anonymous"); //needed so I can actually copy the image for later use
                 setTimeout(function() { //timeout for image load to canvas - start
                     var c = document.getElementById("myCanvas"); //declare the canvas
-
                     var ctx = c.getContext("2d"); //this is needed for canvas  
                     var img = document.getElementById("drawing"); //this is the source image
-                    ctx.drawImage(img, 1,1, 640, 480); //border and canvas size
+                    ctx.drawImage(img, 1, 1, 640, 480); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
-                document.getElementById('drawing1').appendChild(rImg);//append image to paragraph id drawing1
+                document.getElementById('drawing1').appendChild(rImg); //append image to paragraph id drawing1
                 resultDiv.innerHTML += data.artObjects[artObj].title;
                 //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
             };
@@ -50,17 +61,11 @@ function doSearch() {
 
 //reload page to clear results
 function reLoad() {
-        location.reload();
-    }
+    location.reload();
+};
 
-// //Use the disable text selection on the canvas.
-// //this is to avoid that the cursor becomes a text cursor.
-// canvas.onselectstart = function () { return false; } // ie
-// canvas.onmousedown = function () { return false; } // mozilla
-
-
-    //canvas drawing
-    //please see url for deatils: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
+//canvas drawing
+//please see url for deatils: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
