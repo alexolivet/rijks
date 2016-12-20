@@ -150,6 +150,8 @@ canvas {
     margin: 0 auto;
     left:10%;
     border:6px solid;
+    max-width: 100%;  
+height: auto
 }
 #result {
     position: relative;
