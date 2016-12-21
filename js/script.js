@@ -1,8 +1,8 @@
 //variable to build url to rijksmuseum
 var baseURL = "https://www.rijksmuseum.nl/api/en/collection/"
 var apiKey = "?key=r4nzV2tL&imgonly=true&format=json&ps=1"
-var apiKey2 = "?key=r4nzV2tL&imgonly=true&format=json&ps=2"
-var apiKey3 = "?key=r4nzV2tL&imgonly=true&format=json&ps=3"
+var apiKey1 = "?key=r4nzV2tL&imgonly=true&format=json&ps=2"
+var apiKey2 = "?key=r4nzV2tL&imgonly=true&format=json&ps=3"
     //this is the search button on htnl page
 var searchBtn = document.getElementById("search");
 //add event on button
@@ -18,12 +18,10 @@ function search(query) {
         if (time < 10) {
             return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
         } else if (time < 20) {
-            return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
+            return $.getJSON(baseURL + apiKey1 + "&q=Q".replace("Q", query));
         } else {
-            return $.getJSON(baseURL + apiKey3 + "&q=Q".replace("Q", query));
+            return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
         }
-
-
     }
     //search function
 function doSearch() {
@@ -40,8 +38,8 @@ function doSearch() {
             for (var artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
                 var rImg = document.createElement("img"); //create an image element
                 rImg.setAttribute("id", "drawing"); //set attributes
-                rImg.setAttribute("width", "400"); //set width
-                rImg.setAttribute("height", "400"); //set height
+               // rImg.setAttribute("width", "400"); //set width
+               // rImg.setAttribute("height", "400"); //set height
                 rImg.setAttribute("crossOrigin", "Anonymous"); //needed so I can actually copy the image for later use
                 setTimeout(function() { //timeout for image load to canvas - start
                     var c = document.getElementById("myCanvas"); //declare the canvas
@@ -65,7 +63,7 @@ function reLoad() {
 };
 
 //canvas drawing
-//please see url for deatils: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
+//please see url for details: http://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
@@ -136,7 +134,7 @@ function draw() {
 }
 
 function erase() {
-    var m = confirm("Want to clear");
+    var m = confirm("All data will be erased!");
     if (m) {
         ctx.clearRect(0, 0, w, h);
         document.getElementById("drawing1").style.display = "none";
