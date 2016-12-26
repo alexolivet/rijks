@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Draw like Masters App - by elwebman.nl</title>
+  <meta name="description" content="Draw like Masters APP">
+  <meta name="author" content="Alex Olivet - elwebman.nl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/main_style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+  <div class="clearfix wrap">
+
+
+
+   <!--Column#3-->
+   <div class="col col1">
+    <div class="box box4">1<div id="result"></div></div>
+    <div class="box box6">2
+    </div>
+    <div class="box box2">3</div>
+  </div>
+
+  <!--Column#4-->
+  <div class="col col4">
+    <div class="box box7">4
+     <div id="result"></div>
+     <div id="result4"></div>
+     <p id="drawing1"></p>
+     <canvas id="myCanvas" width="500" height="320">Your browser does not support the HTML5 "canvas" tag.</canvas>
+
+     <div>
+      <button id='reset-canvas'>Reset Canvas</button>
+      <button id='save-image'>Save Image</button>
+      <button id='replay'>Replay</button>
+    </div>
+
+  </div>
+  <div class="col col5">
+   <div class="box box3">5
+     <div class="outer-input-div">
+      <div class="inner-input-div">
+        <input id="query" type="search" placeholder="Artist, Painting, or anything!">
+        <input type="button" value="Search" id="search">
+      </div>
+    </div> 
+  </div>
+  <div class="box box2">6</div>
+</div>
+
+<div class="col col5">
+  <div class="box box2">7</div>
+  <div class="box box3">8</div>
+</div>
+
+
+</div>
+
+<!--Column#1-->
+<div class="col col2">
+  <div class="box box6">9<div id="result1"></div></div>
+  <div class="box box4">10<div id="result2"></div></div>
+  <div class="box box2">11<div id="result3"></div></div> 
+</div>
+
+<!--Column#2-->
+<div class="col col3">
+  <div class="box box2">12
+    <a href="http://www.elwebman.nl">Another App by elwebman.nl</a>
+    <p>This app uses paintings from the Rijksmuseum collection, Including works from the Rijksmuseum, View the finest works from the Rijksmuseum.</p>
+    <p>the draw-like-masters app has been developed using the Rijksmuseum API.</p>
+  </div>
+  <div class="box box6">13
+   <img id="canvas-image" style="position:relative;" style="display:none;">
+ </div>        
+
+ <div class="col col3">
+  <div class="box box4">14</div>
+</div>
+<div class="col col3">
+  <div class="box box4">15</div>
+</div>
+<div class="col col4">
+  <div class="box box4">16</div>
+</div>
+</div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
