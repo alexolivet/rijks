@@ -17,11 +17,11 @@ if( empty($errors))
 {
 	$to = $email_address;
 	$to1 = $myemail;
-	$email_subject = "Thank you : $name for contacting Stickers by elwebman.nl";
+	$email_subject = "Thank you : $name for contacting draw-like-masters by elwebman.nl";
 	$email_body = "A few words on how we operate. ".	// this is the content of the email
 	" <html>
 	<head>
-	<title>elwebman.nl stickers</title>
+	<title>draw-like-masters by elwebman.nl</title>
 	<style>
 	p{
 		font-size=20px;
@@ -87,7 +87,7 @@ if( empty($errors))
 <head>
 	<title>Contact form handler</title>
 	<!-- main css style sheet-->
-	<link rel="stylesheet" href="http://stickers.elwebman.nl/css/main_style.css">
+	<link rel="stylesheet" href="http://draw-like-masters.elwebman.nl/css/main_style.css">
 	 <!-- font awesome declaration-->
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 </head>
@@ -99,8 +99,9 @@ if( empty($errors))
 				<?php
 				echo nl2br($errors);
 				?>
-				<p>Generate your words and use the form to send them to your email address.</p>
-				<p> Go back to  <a href="http://stickers.elwebman.nl/">Stickers by elwebman.nl</a>.</p>
+				<p>Oops!..something went wrong.</p>
+				<p>Please fill in all fields and then click send.</p>
+				<p> Go back to  <a href="http://draw-like-masters.elwebman.nl/">Draw-like-masters by elwebman.nl</a>.</p>
 				<div class="footer-icons">
 					<a href="https://www.facebook.com/elwebmanamsterdam/"><i class="fa fa-facebook"></i></a>
 					<a href="https://www.linkedin.com/in/alexolivet"><i class="fa fa-linkedin"></i></a>
