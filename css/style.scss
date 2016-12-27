@@ -8,8 +8,16 @@
 
 //Roboto Slab
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
-$font-stack:'Roboto Slab', serif;
+$font-roboto:'Roboto Slab', serif;
 
+//Orange Juice
+//created by Brittney Murphy
+//commerical license: http://brittneymurphydesign.com/downloads/orange-juice/
+@font-face {
+    font-family: 'Orange_Juice';
+    src: url('../fonts/orangejuice2.ttf') format('truetype');
+  }
+$font-orange:'Orange_Juice';
 
 //box sizing mixin
 @mixin box-sizing($box-model) {
@@ -72,12 +80,36 @@ $mq-700: "(max-width: 700px)";
 html, body, #page-one,#page-two, #page-three,#page-four,#page-five {
 	height:auto;
 	min-height: 100vh;
-  font-family: $font-stack;
+  font-family: $font-roboto;
+  
 
 }
 
 /*GLOBALS*/
-h2{ font-size:3em;font-weight:bold; font-family: 'Kaushan Script', cursive; margin-bottom:4px;text-align:center;padding-top:1em;}
+h2{ 
+  font-size:5em;
+  font-family: $font-orange; 
+  text-align:center;
+  padding-top:1em;
+  line-height: 3px;
+  color:$grey;
+  @media #{$mq-1024} {
+  font-size:3em;
+
+ }
+}
+h3{ 
+  font-size:3em;
+  font-family: $font-orange; 
+  text-align:center;
+  padding-bottom:1em;
+   line-height: 2px;
+   color:$grey;
+   @media #{$mq-1024} {
+  font-size:2em;
+ }
+}
+
 a{text-decoration:none; }
 
 #page-one {
@@ -88,13 +120,15 @@ a{text-decoration:none; }
 }
 
 #page-two {
-  background-image: url("../images/section2.png");
-  background-size:15%;
+  background-image: url("../images/section2.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
   background-position:center;
 }
 #page-three {
-  background-image: url("../images/section3.png");
-  background-size:20%;
+  background-image: url("../images/section3.jpg");
+ background-size: cover;
+  background-repeat:no-repeat;
   background-position:center;
 }
 #page-four{
@@ -221,7 +255,8 @@ nav {
     margin: 0;
     text-align: left;
     &:first-letter {
-      font-size: 3.5em;
+      font-family: $font-orange; 
+      font-size: 2.5em;
       line-height: 1em;
       font-weight: 400;
       float: left;
@@ -323,9 +358,22 @@ canvas {
   overflow:hidden;
 }
 
-.pop span{  text-shadow:none; color:#066;   padding:0;}
-.pop h2{text-shadow:none; font-size:16px; color:#666; text-align:center;}
-.pop h1{font-size:36px;  font-family: 'Kaushan Script', cursive; margin-bottom:4px; color:#666; margin-bottom:14px; text-align:center;}
+.pop span{  
+  text-shadow:none; 
+  color:#066;   
+  padding:0;}
+.pop h2{
+  text-shadow:none; 
+  font-size:16px; 
+  color:#666; 
+  text-align:center;}
+.pop h1{
+  font-size:40px;  
+  font-family: $font-orange; 
+  margin-bottom:4px; 
+  color:#666; 
+  margin-bottom:14px; 
+  text-align:center;}
 .pop div{ margin-top:30px;}
 .pop p{line-height:100%;}
 

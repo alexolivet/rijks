@@ -54,13 +54,13 @@ function popup(){
     //css for popup window
     var box = $('<div class="pop"></div>').appendTo(overlay);
     
-    var title = "<h1>Custom Grid Layout</h1>   <h2>A Pen by <a href='http://www.andrecortellini.com' target='_blank'><span>André Cortellini</span></a></h2>";
+    var title = "<h1>draw-like-masters</h1>   <h2>An online drawing App by <a href='http://www.elwebman.nl' target='_blank'><span>elwebman.nl</span></a></h2>";
     
-    var text = "<div><p>- Left click to add an image box</p> <p>- Right click to add a color box</p></div>";    
-    var text2 = "<div><p>Create your custom gallery layout using this simple and responsive grid system</p></div>";
+    var text = "<div><p>- Fun and completely free.</p> <p>- Drawing and learning made easy.</p><p>This is an initiative to get the whole world drawing.</p></div>";    
+    var text2 = "<div><p>You can access the APP right <a href='drawing.html' target='_blank'><span>here</span></a>.</p></div>";
     
     box.html(title + text + text2);
-    
+    //close icon
     var clos = $('<div id="close">x</div>').appendTo(box);
     
     
@@ -76,7 +76,7 @@ function popup(){
         }
     }, 50);
     
-    
+    //close popup function
     clos.click(function(){
         $(this).parent().parent().remove();
     });

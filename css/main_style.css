@@ -369,6 +369,9 @@ table {
   .col .col {
     width: 100%;
     padding-left: 0 !important; } }
+@font-face {
+  font-family: 'Orange_Juice';
+  src: url("../fonts/orangejuice2.ttf") format("truetype"); }
 .left {
   float: left !important; }
 
@@ -389,12 +392,26 @@ html, body, #page-one, #page-two, #page-three, #page-four, #page-five {
 
 /*GLOBALS*/
 h2 {
-  font-size: 3em;
-  font-weight: bold;
-  font-family: 'Kaushan Script', cursive;
-  margin-bottom: 4px;
+  font-size: 5em;
+  font-family: "Orange_Juice";
   text-align: center;
-  padding-top: 1em; }
+  padding-top: 1em;
+  line-height: 3px;
+  color: #9E9E9E; }
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 3em; } }
+
+h3 {
+  font-size: 3em;
+  font-family: "Orange_Juice";
+  text-align: center;
+  padding-bottom: 1em;
+  line-height: 2px;
+  color: #9E9E9E; }
+  @media (max-width: 1024px) {
+    h3 {
+      font-size: 2em; } }
 
 a {
   text-decoration: none; }
@@ -406,13 +423,15 @@ a {
   background-position: center; }
 
 #page-two {
-  background-image: url("../images/section2.png");
-  background-size: 15%;
+  background-image: url("../images/section2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center; }
 
 #page-three {
-  background-image: url("../images/section3.png");
-  background-size: 20%;
+  background-image: url("../images/section3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center; }
 
 #page-four {
@@ -524,7 +543,8 @@ nav {
     margin: 0;
     text-align: left; }
     .row [class^="col"] p:first-letter {
-      font-size: 3.5em;
+      font-family: "Orange_Juice";
+      font-size: 2.5em;
       line-height: 1em;
       font-weight: 400;
       float: left;
@@ -619,8 +639,8 @@ canvas {
   text-align: center; }
 
 .pop h1 {
-  font-size: 36px;
-  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+  font-family: "Orange_Juice";
   margin-bottom: 4px;
   color: #666;
   margin-bottom: 14px;
