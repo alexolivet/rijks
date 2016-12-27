@@ -277,7 +277,6 @@ table {
 .box {
   width: 100%;
   margin-bottom: 12px;
-  background: #999;
   clear: both;
   background-color: #eaeaea;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
@@ -287,7 +286,6 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   text-align: center;
-  color: #fff;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -397,7 +395,7 @@ h2 {
   text-align: center;
   padding-top: 1em;
   line-height: 3px;
-  color: #9E9E9E; }
+  color: #F0EFEF; }
   @media (max-width: 1024px) {
     h2 {
       font-size: 3em; } }
@@ -408,7 +406,7 @@ h3 {
   text-align: center;
   padding-bottom: 1em;
   line-height: 2px;
-  color: #9E9E9E; }
+  color: #F0EFEF; }
   @media (max-width: 1024px) {
     h3 {
       font-size: 2em; } }
@@ -420,30 +418,43 @@ a {
   background-image: url("../images/section1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  border: 5px solid #fff; }
 
 #page-two {
   background-image: url("../images/section2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  border: 5px solid #fff; }
 
 #page-three {
   background-image: url("../images/section3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  border: 5px solid #fff; }
 
 #page-four {
-  background-image: url("../images/section4.png");
-  background-size: 20%;
-  background-position: center; }
-
-#page-five {
-  background-image: url("../images/section1.jpg");
+  background-image: url("../images/section4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  border: 5px solid #fff; }
+
+#page-five {
+  background-image: url("../images/section5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid #fff; }
+
+#page-six {
+  background-image: url("../images/section6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid #fff; }
 
 #page-one, #page-two, #page-three, #page-four, #page-five {
   padding-top: 2em; }
@@ -452,7 +463,7 @@ a {
   background-color: #fff; }
 
 #page-two {
-  background-color: #9E9E9E; }
+  background-color: #F0EFEF; }
 
 #page-three {
   background-color: #4CAF50; }
@@ -503,7 +514,7 @@ nav {
   @media (max-width: 1024px) {
     #menu {
       display: block;
-      color: #9E9E9E; } }
+      color: #F0EFEF; } }
 
 .sidenav {
   height: 100%;
@@ -523,7 +534,7 @@ nav {
     padding-left: 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #9E9E9E;
+    color: #F0EFEF;
     display: block;
     transition: 0.3s; }
     .sidenav a:hover {
@@ -559,6 +570,9 @@ textarea {
   font-size: 13px;
   color: #444;
   padding: 5px; }
+
+#home-top {
+  position: absolute; }
 
 canvas {
   position: relative;
