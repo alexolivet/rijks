@@ -13,6 +13,7 @@ var resultDiv1 = document.getElementById("result1");
 var resultDiv2 = document.getElementById("result2");
 var resultDiv3 = document.getElementById("result3");
 var resultDiv4 = document.getElementById("result4"); // will display text if no image returned
+var resultDiv5 = document.getElementById("result5"); // title
 //this is the search value added to url
 var searchField = document.getElementById("query");
 //get time so to return adequate url depending on time
@@ -41,6 +42,7 @@ function doSearch() {
         //invoke search function
         search(searchString).done(function(data) { //.done is similar to the success callback 
             for (var artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
+                $("#rules").hide(); //method of use can go away
                 var rImg = document.createElement("img"); //create an image element
                 rImg.setAttribute("id", "drawing"); //set id attribute
                 //rImg.setAttribute("width", "400"); //set image width
@@ -55,12 +57,12 @@ function doSearch() {
                     if (img===null){ //if no images are returned then display alert
                         resultDiv4.innerHTML += "<p>No images for this search. Please Try again.</p>"
                     }
-                    ctx.drawImage(img, 0, 0, 500, 320); //border and canvas size
+                    ctx.drawImage(img, 0, 0, 620, 320); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
                 document.getElementById('drawing1').appendChild(rImg); //append image to paragraph id drawing1
-                resultDiv.innerHTML += data.artObjects[artObj].title; //object title
+                resultDiv5.innerHTML += data.artObjects[artObj].title; //object title
                 resultDiv1.innerHTML += data.artObjects[artObj].principalOrFirstMaker; //object maker
                 resultDiv2.innerHTML += data.artObjects[artObj].longTitle; //object long title
                 //returns link of selected objects to rijksstudio
@@ -164,42 +166,42 @@ saveImage.onclick = function() {
     img.src = dataURL;
 };
 
-//replay button
-//not my own code but could be usefull
-var replay = document.querySelector('button#replay');
-replay.onclick = function() {
-    canvas.width = canvas.width;
+// //replay button
+// //not my own code but could be usefull
+// var replay = document.querySelector('button#replay');
+// replay.onclick = function() {
+//     canvas.width = canvas.width;
 
-    // load localStorage
-    if (points.length === 0) {
-        if (localStorage["points"] !== undefined) {
-            points = JSON.parse(localStorage["points"]);
-        }
-    }
+//     // load localStorage
+//     if (points.length === 0) {
+//         if (localStorage["points"] !== undefined) {
+//             points = JSON.parse(localStorage["points"]);
+//         }
+//     }
 
-    var point = 1;
-    setInterval(function() {
-        drawNextPoint(point);
-        point += 1;
-    }, 10);
+//     var point = 1;
+//     setInterval(function() {
+//         drawNextPoint(point);
+//         point += 1;
+//     }, 10);
 
-    function drawNextPoint(index) {
-        if (index > points.length) {
-            return;
-        }
-        var startX = points[index - 1].x;
-        var startY = points[index - 1].y;
-        var x = points[index].x;
-        var y = points[index].y;
+//     function drawNextPoint(index) {
+//         if (index > points.length) {
+//             return;
+//         }
+//         var startX = points[index - 1].x;
+//         var startY = points[index - 1].y;
+//         var x = points[index].x;
+//         var y = points[index].y;
 
-        context.beginPath();
-        context.moveTo(startX, startY);
-        context.lineTo(x, y);
-        context.lineWidth = 2;
-        context.lineCap = 'round';
-        context.strokeStyle = "rgba(0,0,0,1)";
-        context.stroke();
+//         context.beginPath();
+//         context.moveTo(startX, startY);
+//         context.lineTo(x, y);
+//         context.lineWidth = 2;
+//         context.lineCap = 'round';
+//         context.strokeStyle = "rgba(0,0,0,1)";
+//         context.stroke();
 
-    }
+//     }
 
-};
+// };
