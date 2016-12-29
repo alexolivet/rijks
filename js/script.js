@@ -4,7 +4,7 @@ var apiKey = "?key=r4nzV2tL&imgonly=True&format=json&ps=1"
 var apiKey1 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=2"
 var apiKey2 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=3"
     //this is the search button on htnl page
-var searchBtn = document.getElementById("search");
+    var searchBtn = document.getElementById("search");
 //add event on button
 searchBtn.addEventListener("click", doSearch);
 //these are the containers where my data will be spread out
@@ -21,16 +21,16 @@ var time = new Date().getHours();
 // search the collection using a JSON call
 //included if else statement to make it returned different results
 function search(query) {
-        if (time < 10) {
-            return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
-        } else if (time < 20) {
-            return $.getJSON(baseURL + apiKey1 + "&q=Q".replace("Q", query));
-        } else {
-            return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
-        }
+    if (time < 10) {
+        return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
+    } else if (time < 20) {
+        return $.getJSON(baseURL + apiKey1 + "&q=Q".replace("Q", query));
+    } else {
+        return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
     }
+}
     //search function
-function doSearch() {
+    function doSearch() {
     //The innerHTML property sets or returns the HTML content (inner HTML) of an element.
     //in this case it is empty on each new search
     resultDiv.innerHTML = "";
@@ -57,7 +57,7 @@ function doSearch() {
                     if (img===null){ //if no images are returned then display alert
                         resultDiv4.innerHTML += "<p>No images for this search. Please Try again.</p>"
                     }
-                    ctx.drawImage(img, 0, 0, 620, 320); //border and canvas size
+                    ctx.drawImage(img, 0, 0, 393, 320); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
@@ -70,7 +70,7 @@ function doSearch() {
                 //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
             };
         });
-    };
+};
 }
 
 // //reload page to clear results
@@ -81,14 +81,17 @@ function doSearch() {
 //this is the canvas drawing
 //link to code https://codepen.io/makzan/pen/jWeWBJ
 var canvas = document.getElementById('myCanvas'); // canvas declaration
-var context = canvas.getContext('2d'); // canvas context declaration
+// Obtain a graphics context on the
+// canvas element for drawing.
+var context = canvas.getContext('2d'); 
 
 //starting variable
 var isDrawing = false;
 var startX = 0; //sets the starting position within the canvas - x axis
 var startY = 0; //sets the starting position within the canvas - y axis
 
-var points = [];
+//variable linked to replay button
+// var points = [];
 
 
 //The mousedown fires when the user depresses the mouse button.
@@ -107,17 +110,32 @@ canvas.addEventListener('mousedown', function(e) {
     });
 });
 
+
+//HSL stands for hue, saturation, and lightness - and represents a cylindrical-coordinate representation of colors.
+//An HSL color value is specified with: hsl(hue, saturation, lightness).
+//Hue is a degree on the color wheel (from 0 to 360) - 0 (or 360) is red, 120 is green, 240 is blue. 
+//Saturation is a percentage value; 0% means a shade of gray and 100% is the full color. 
+//Lightness is also a percentage; 0% is black, 100% is white.
+function getRandomColorHsl() {
+  color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+  return color;
+}
+
 //the mousemove event is fired when a pointing device (usually a mouse) is moved while over an element
 canvas.addEventListener('mousemove', function(e) {
     var rect = canvas.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
 
-    //variable for the gradient color
-    var gradient = context.createLinearGradient(0, 0, 190, 0);
-    gradient.addColorStop("0", "magenta");
-    gradient.addColorStop("0.5", "blue");
-    gradient.addColorStop("1.0", "red");
+    // //variable for the gradient color
+    // var gradient = getRandomColor() ;
+    // gradient.addColorStop("0", "magenta");
+    // gradient.addColorStop("0.5", "blue");
+    // gradient.addColorStop("1.0", "red");
+
+    //variable for the random color lines
+    var gradient = getRandomColorHsl();
+
 
     if (isDrawing) {
         context.beginPath();

@@ -32,15 +32,6 @@ function getRandomColor() {
                 return color;
             }
 
-//HSL stands for hue, saturation, and lightness - and represents a cylindrical-coordinate representation of colors.
-//An HSL color value is specified with: hsl(hue, saturation, lightness).
-//Hue is a degree on the color wheel (from 0 to 360) - 0 (or 360) is red, 120 is green, 240 is blue. 
-//Saturation is a percentage value; 0% means a shade of gray and 100% is the full color. 
-//Lightness is also a percentage; 0% is black, 100% is white.
-function getRandomColorHsl() {
-  color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
-  return color;
-}
 
 //RGB version
 function getRandomColorRgb() {

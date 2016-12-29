@@ -85,4 +85,4 @@ function popup(){
 
  setTimeout(function() { //timeout for popup on landing page starts
 popup();
- }, 1000); //timeout for popup on landing page starts - ends
+ }, 100); //timeout for popup on landing page starts - ends
