@@ -4,7 +4,7 @@ var apiKey = "?key=r4nzV2tL&imgonly=True&format=json&ps=1"
 var apiKey1 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=2"
 var apiKey2 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=3"
     //this is the search button on htnl page
-    var searchBtn = document.getElementById("search");
+var searchBtn = document.getElementById("search");
 //add event on button
 searchBtn.addEventListener("click", doSearch);
 //these are the containers where my data will be spread out
@@ -14,6 +14,10 @@ var resultDiv2 = document.getElementById("result2");
 var resultDiv3 = document.getElementById("result3");
 var resultDiv4 = document.getElementById("result4"); // will display text if no image returned
 var resultDiv5 = document.getElementById("result5"); // title
+var resultDiv6 = document.getElementById("result6"); // Add image url to textarea. will go to mail as php variable
+var resultDiv7 = document.getElementById("result7"); // Add object number url to textarea. will go to mail as php variable
+var resultDiv8 = document.getElementById("result8"); // Add title  to textarea. will go to mail as php variable
+var resultDiv9 = document.getElementById("result9"); // Add artist  to textarea. will go to mail as php variable
 //this is the search value added to url
 var searchField = document.getElementById("query");
 //get time so to return adequate url depending on time
@@ -21,16 +25,16 @@ var time = new Date().getHours();
 // search the collection using a JSON call
 //included if else statement to make it returned different results
 function search(query) {
-    if (time < 10) {
-        return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
-    } else if (time < 20) {
-        return $.getJSON(baseURL + apiKey1 + "&q=Q".replace("Q", query));
-    } else {
-        return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
+        if (time < 10) {
+            return $.getJSON(baseURL + apiKey + "&q=Q".replace("Q", query));
+        } else if (time < 20) {
+            return $.getJSON(baseURL + apiKey1 + "&q=Q".replace("Q", query));
+        } else {
+            return $.getJSON(baseURL + apiKey2 + "&q=Q".replace("Q", query));
+        }
     }
-}
     //search function
-    function doSearch() {
+function doSearch() {
     //The innerHTML property sets or returns the HTML content (inner HTML) of an element.
     //in this case it is empty on each new search
     resultDiv.innerHTML = "";
@@ -42,7 +46,6 @@ function search(query) {
         //invoke search function
         search(searchString).done(function(data) { //.done is similar to the success callback 
             for (var artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
-                $("#rules").hide(); //method of use can go away
                 var rImg = document.createElement("img"); //create an image element
                 rImg.setAttribute("id", "drawing"); //set id attribute
                 //rImg.setAttribute("width", "400"); //set image width
@@ -54,10 +57,10 @@ function search(query) {
                     // c.height = 320; // set canvas height
                     var ctx = c.getContext("2d"); //this is needed for canvas  
                     var img = document.getElementById("drawing"); //this is the source image
-                    if (img===null){ //if no images are returned then display alert
+                    if (img === null) { //if no images are returned then display alert
                         resultDiv4.innerHTML += "<p>No images for this search. Please Try again.</p>"
                     }
-                    ctx.drawImage(img, 0, 0, 393, 320); //border and canvas size
+                    ctx.drawImage(img, 0, 0, 393, 340); //border and canvas size
                 }, 1000); //timeout for image load to canvas - ends
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
@@ -67,10 +70,14 @@ function search(query) {
                 resultDiv2.innerHTML += data.artObjects[artObj].longTitle; //object long title
                 //returns link of selected objects to rijksstudio
                 resultDiv3.innerHTML += "<p id='link-p'>Check it in <a href=" + data.artObjects[artObj].links.web + " target='_blank'><img src='images/rijkslogo.jpg' id='rijks-logo'></a></p>";
+                resultDiv6.innerHTML += data.artObjects[artObj].links.web; // url going to hidden textarea
+                resultDiv7.innerHTML += data.artObjects[artObj].objectNumber; // objectNumber going to hidden textarea
+                resultDiv8.innerHTML += data.artObjects[artObj].title; //title going to hidden textarea
+                resultDiv9.innerHTML += data.artObjects[artObj].principalOrFirstMaker; //artist going to hidden textarea
                 //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
             };
         });
-};
+    };
 }
 
 // //reload page to clear results
@@ -83,15 +90,13 @@ function search(query) {
 var canvas = document.getElementById('myCanvas'); // canvas declaration
 // Obtain a graphics context on the
 // canvas element for drawing.
-var context = canvas.getContext('2d'); 
+var context = canvas.getContext('2d');
 
 //starting variable
 var isDrawing = false;
 var startX = 0; //sets the starting position within the canvas - x axis
 var startY = 0; //sets the starting position within the canvas - y axis
 
-//variable linked to replay button
-// var points = [];
 
 
 //The mousedown fires when the user depresses the mouse button.
@@ -117,8 +122,8 @@ canvas.addEventListener('mousedown', function(e) {
 //Saturation is a percentage value; 0% means a shade of gray and 100% is the full color. 
 //Lightness is also a percentage; 0% is black, 100% is white.
 function getRandomColorHsl() {
-  color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
-  return color;
+    color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+    return color;
 }
 
 //the mousemove event is fired when a pointing device (usually a mouse) is moved while over an element
@@ -164,7 +169,7 @@ canvas.addEventListener('mousemove', function(e) {
 //so when mouse not on canvas: do not draw
 document.addEventListener('mouseup', function(e) {
     isDrawing = false;
-    if (points.length > 0) {
+    if (isDrawing = false) {
         localStorage['points'] = JSON.stringify(points);
     }
 });
@@ -183,43 +188,3 @@ saveImage.onclick = function() {
     var img = document.getElementById('canvas-image');
     img.src = dataURL;
 };
-
-// //replay button
-// //not my own code but could be usefull
-// var replay = document.querySelector('button#replay');
-// replay.onclick = function() {
-//     canvas.width = canvas.width;
-
-//     // load localStorage
-//     if (points.length === 0) {
-//         if (localStorage["points"] !== undefined) {
-//             points = JSON.parse(localStorage["points"]);
-//         }
-//     }
-
-//     var point = 1;
-//     setInterval(function() {
-//         drawNextPoint(point);
-//         point += 1;
-//     }, 10);
-
-//     function drawNextPoint(index) {
-//         if (index > points.length) {
-//             return;
-//         }
-//         var startX = points[index - 1].x;
-//         var startY = points[index - 1].y;
-//         var x = points[index].x;
-//         var y = points[index].y;
-
-//         context.beginPath();
-//         context.moveTo(startX, startY);
-//         context.lineTo(x, y);
-//         context.lineWidth = 2;
-//         context.lineCap = 'round';
-//         context.strokeStyle = "rgba(0,0,0,1)";
-//         context.stroke();
-
-//     }
-
-// };

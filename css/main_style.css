@@ -278,15 +278,12 @@ table {
   width: 100%;
   margin-bottom: 12px;
   clear: both;
-  background-color: #F0EFEF;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   background-position: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   text-align: center;
-  cursor: pointer;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -362,12 +359,22 @@ table {
     padding-left: 0 !important; } }
 @font-face {
   font-family: 'Orange_Juice';
-  src: url("../fonts/orangejuice2.ttf") format("truetype"); }
+  src: url("http://draw-like-masters.elwebman.nl/fonts/orangejuice2.ttf") format("truetype"); }
 .left {
   float: left !important; }
 
 .right {
   float: right !important; }
+
+.hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
 
 *,
 *:before,
@@ -392,17 +399,24 @@ h2 {
   @media (max-width: 1024px) {
     h2 {
       font-size: 3em; } }
+  @media (max-width: 700px) {
+    h2 {
+      font-size: 2em; } }
 
 h3 {
   font-size: 3em;
   font-family: "Orange_Juice";
   text-align: center;
+  padding-top: 1em;
   padding-bottom: 1em;
   line-height: 2px;
   color: #F0EFEF; }
   @media (max-width: 1024px) {
     h3 {
       font-size: 2em; } }
+  @media (max-width: 700px) {
+    h3 {
+      font-size: 1em; } }
 
 a {
   text-decoration: none; }
@@ -542,11 +556,9 @@ nav {
       font-family: "Orange_Juice";
       font-size: 2.5em;
       line-height: 1em;
-      font-weight: 400;
+      font-weight: 800;
       float: left;
       margin: 0 0.107em 0 0; }
-    .row [class^="col"] p:first-line {
-      font-weight: 800; }
 
 #home-top {
   position: absolute; }
@@ -565,12 +577,6 @@ nav {
   #home-top li a:hover {
     background-color: #111111; }
 
-.division {
-  width: 100%;
-  height: 50%;
-  float: left;
-  clear: both; }
-
 canvas {
   position: relative;
   padding: 0;
@@ -581,6 +587,9 @@ canvas {
   background-image: url("../images/canvas-img-1.png");
   background-size: contain;
   background-repeat: no-repeat; }
+  @media (max-width: 700px) {
+    canvas {
+      background-image: url("../images/canvas-img-mobile.png"); } }
 
 #result {
   position: relative;
@@ -592,43 +601,43 @@ canvas {
   width: 100%;
   height: 100%; }
 
-#query,
-#search {
+.division {
   width: 100%;
-  height: 100%; }
+  height: 33%;
+  float: left;
+  clear: both; }
 
-input[type="search"] {
-  -webkit-appearance: textfield; }
-
-#search {
+.tools {
+  font-family: "Orange_Juice";
   cursor: pointer;
-  background-color: #FF9800;
-  color: white;
-  font-size: 40px; }
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  background-color: #F44336; }
 
 #query {
-  border: 1px solid;
   font-weight: bold;
-  font-size: 15px; }
+  font-size: 15px;
+  width: 100%;
+  height: 100%; }
 
 #canvas-image {
   position: relative;
   width: 100%;
   height: 100%; }
 
-@media (max-width: 700px) {
-  #save-image {
-    display: none; } }
-
-#rules {
-  text-align: left;
-  list-style: circle; }
-
 #rijks-logo {
   width: 30%;
   vertical-align: middle;
   border: 1px solid #999999;
   border-radius: 5px; }
+
+@media (max-width: 700px) {
+  #mobile {
+    display: none; } }
+
+input[type="search"] {
+  -webkit-appearance: textfield; }
 
 /*OVERLAY*/
 .overlay {
@@ -639,6 +648,9 @@ input[type="search"] {
   left: 0;
   width: 100%;
   height: 100%; }
+  @media (max-width: 700px) {
+    .overlay {
+      display: none; } }
 
 .pop {
   position: absolute;

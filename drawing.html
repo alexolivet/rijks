@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
+
   <meta charset="UTF-8">
   <title>Draw like Masters App - by elwebman.nl</title>
   <meta name="description" content="Draw like Masters APP">
@@ -8,105 +10,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main_style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <!-- a helper script for vaidating the form-->
+  <script src="js/email_validator.js"></script>
 
 </head>
 
 <body id="page-six">
   <ul id="home-top">
- <li><a href="index.html" ><i class="fa fa-home fa-4x" aria-hidden="true"></i></a></li>
-<li><a href="index.html" >  <i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a></li>
-</ul>
+    <li><a href="index.html"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a>
+    </li>
+  </ul>
 
   <div class="clearfix wrap">
-   <!--Column#1-->
-
-
-  <!--Column#2-->
-  <div class="col col5">
-    <div class="box box7" >
-     <div id="result"></div>
-     <!--  will display text if nothing is found -->
-     <div id="result4"></div>
-     <p id="drawing1"></p>
-     <canvas id="myCanvas" width="393" height="320">Your browser does not support the HTML5 "canvas" tag.</canvas>
-
-     <div id="controls">
-      <button id='reset-canvas'>Reset Canvas</button>
-      <button id='save-image'>Save Image</button>
-      <!-- <button id='replay'>Replay</button> -->
+    <!--Column#1-->
+    <div class="col col5">
+      <div class="box box7">
+        <div id="result"></div>
+        <!--  will display text if nothing is found -->
+        <div id="result4"></div>
+        <p id="drawing1"></p>
+        <canvas id="myCanvas" width="393" height="340">Your browser does not support the HTML5 "canvas" tag.</canvas>
+      </div>
+          <!--Column#2-->
+      <div class="col col4">
+        <div class="box box3">
+          <!-- search field -->
+          <div class="division">
+            <input id="query" type="search" placeholder="Artist, Painting, or anything!">
+          </div>
+          <div class="division">
+            <!-- search button -->
+            <input type="button" value="Search" id="search" class="tools">
+          </div>
+           <div class="division">
+            <!-- search button -->
+             <button id='reset-canvas' class="tools">Reset Canvas</button>
+          </div>
+        </div>
+        <div class="box box2">
+          <div class="division">
+            Artist:
+            <div id="result1"></div>
+          </div>
+          <div class="division">
+            URL:
+            <div id="result3"></div>
+          </div>
+        </div>
+      </div>
+          <!--Column#3-->
+      <div class="col col6">
+        <div class="box box2">Title:
+          <div id="result5"></div>
+        </div>
+        <div class="box box2">Description:
+          <div id="result2"></div>
+        </div>
+        <div class="box box1">
+          <p>The "draw-like-masters" APP has been developed using <a href="http://rijksmuseum.github.io">the Rijksmuseum API.</a>
+          </p>
+        </div>
+      </div>
     </div>
-
-  </div>
-  <div class="col col4">
-   <div class="box box3">
-    <!-- search field -->
-    <div  class="division">    
-      <input id="query" type="search" placeholder="Artist, Painting, or anything!">
+    <!--Column#4-->
+    <!--not on mobile starts-->
+    <div id="mobile">
+    <div class="col col2">
+      <div class="box box6">We email you the original image URL to your email.
+        <ul>Simply follow the form instructions:
+          <li>*click on 'Save Image.
+        </li>
+        <li>*Fill in your name.</li>
+        <li>*Fill in a valid email address</li>
+        <li>*Click on Send</li>
+      </ul>
+      </div>
+      <div class="box box3"> <button id="save-image" class="tools">Save Image</button></div>
     </div>
-    <div  class="division">  
-      <!-- search button -->
-      <input type="button" value="Search" id="search">
+    <!--Column#5-->
+    <div class="col col3">
+      <div class="box">
+        <p>The draw-like-masters APP was not developed by, for, through the intercession of, or with the support of the Rijksmuseum.</a>
+        </p>
+      </div>
+      <form method="POST" name="contactform-image" action="js/contact-form-image.php" id="form_image">
+        <div class="box box6">
+          <img id="canvas-image">
+        </div>
+        <!--Column#6-->
+        <div class="col col6">
+          <div class="box box2">Your Name:
+            <br>
+            <label id='name'></label>
+            <br>
+            <input type="text" name="name">
+          </div>
+          <div class="box box2">Your Email Address:
+            <br>
+            <label id='email'></label>
+            <br>
+            <input type="text" name="email">
+            <textarea name="message" id="result6" class="hidden"></textarea>
+            <textarea name="message1" id="result7" class="hidden"></textarea>
+            <textarea name="message2" id="result8" class="hidden"></textarea>
+            <textarea name="message3" id="result9" class="hidden"></textarea>
+          </div>
+        </div>
+        <!--Column#7-->
+        <div class="col col4">
+          <div class="box box4">
+            <input type="submit" value="Send" class="tools">
+          </div>
+        </div>
+      </form>
     </div>
-
-
-
   </div>
-  <div class="box box2"> 
-    <div  class="division">    
-     Artist:<div id="result1"></div>
-    </div>
-    <div class="division">  
-      URL:<div id="result3"></div>
-      
-    </div>
+    <!--not on mobile ends-->
   </div>
-</div>
-
-<div class="col col6">
-  <div class="box box2">Title:<div id="result5"></div></div>
-  <div class="box box2">Description:<div id="result2"></div></div>
-  <div class="box box1">
-    <p>The "draw-like-masters" APP has been developed using <a href="http://rijksmuseum.github.io">the Rijksmuseum API.</a></p>
-  </div>
-</div>
-
-
-</div>
-
-<!--Column#3-->
-<div class="col col2">
-  <div class="box box6">
-  </div>
-  <div class="box box3">10</div>
-  <div class="box box1">10a<div id="result1"></div></div>
-  <div class="box box2">11<div id="result3"></div></div> 
-</div>
-
-<!--Column#4-->
-<div class="col col3">
-  <div class="box box1">
-    <p>The "draw-like-masters" APP has been developed using <a href="http://rijksmuseum.github.io">the Rijksmuseum API.</a></p>
-  </div>
-  <div class="box box6">
-   <img id="canvas-image">
- </div>        
-
- <div class="col col3">
-  <div class="box box4">14</div>
-</div>
-<div class="col col3">
-  <div class="box box4">15</div>
-</div>
-<div class="col col4">
-  <div class="box box4">16</div>
-</div>
-</div>
-</div>
-
-
-<script src="js/jquery.js"></script>
-
-<script type="text/javascript" src="js/script.js"></script>
+  <!-- start email validator -->
+  <script>
+  var frmvalidator = new Validator("contactform-image");
+  frmvalidator.addValidation("name", "req", "Please provide your name");
+  frmvalidator.addValidation("email", "req", "Please provide your email");
+  frmvalidator.addValidation("email", "email", "Please enter a valid email address");
+  </script>
+  <!-- end email validator -->
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 </html>
