@@ -5,6 +5,12 @@ var apiKey1 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=2"
 var apiKey2 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=3"
     //this is the search button on htnl page
 var searchBtn = document.getElementById("search");
+//hide reset canvas button
+$("#reset-canvas").hide();
+//hide save image button
+$("#save-image").hide();
+//loader element
+$("#loader").hide();
 //add event on button
 searchBtn.addEventListener("click", doSearch);
 //these are the containers where my data will be spread out
@@ -43,8 +49,16 @@ function doSearch() {
     if (!searchString) {
         resultDiv.innerHTML = "<p>Please submit at least a letter</p>";
     } else {
+        $("#loader").show();
+        $("#search").hide();
+        $("#query").hide();
+        $("#reset-canvas").show();
         //invoke search function
-        search(searchString).done(function(data) { //.done is similar to the success callback 
+        search(searchString).done(function(data) { //.done is similar to the success callback
+            //if result count is 0 throw message in div
+            if (data.count===0){
+                resultDiv4.innerHTML += "<p>No matching result. Please use another term.</p>"
+            }
             for (var artObj in data.artObjects) { //Loops are handy, if you want to run the same code over and over again, each time with a different value.
                 var rImg = document.createElement("img"); //create an image element
                 rImg.setAttribute("id", "drawing"); //set id attribute
@@ -52,7 +66,7 @@ function doSearch() {
                 //rImg.setAttribute("height", "300"); //set image height
                 rImg.setAttribute("crossOrigin", "Anonymous"); //needed so I can actually copy the image for later use
                 setTimeout(function() { //timeout for image load to canvas - start
-                    var c = document.getElementById("myCanvas"); //declare the canvas
+                  var c = document.getElementById("myCanvas"); //declare the canvas
                     //c.width = 500; // set canvas width
                     // c.height = 320; // set canvas height
                     var ctx = c.getContext("2d"); //this is needed for canvas  
@@ -61,7 +75,10 @@ function doSearch() {
                         resultDiv4.innerHTML += "<p>No images for this search. Please Try again.</p>"
                     }
                     ctx.drawImage(img, 0, 0, 393, 340); //border and canvas size
+                    $("#loader").hide();
+                    $("#save-image").show();//show save image button
                 }, 1000); //timeout for image load to canvas - ends
+               
                 rImg.src = data.artObjects[artObj].webImage.url; //rijksmuseum image source
                 //resultDiv.appendChild(rImg);
                 document.getElementById('drawing1').appendChild(rImg); //append image to paragraph id drawing1
@@ -76,6 +93,7 @@ function doSearch() {
                 resultDiv9.innerHTML += data.artObjects[artObj].principalOrFirstMaker; //artist going to hidden textarea
                 //resultDiv.innerHTML += "<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>";
             };
+
         });
     };
 }
@@ -187,4 +205,5 @@ saveImage.onclick = function() {
     var dataURL = canvas.toDataURL();
     var img = document.getElementById('canvas-image');
     img.src = dataURL;
+
 };
