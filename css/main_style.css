@@ -190,7 +190,7 @@ table {
 /*WRAPPER*/
 .wrap {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -383,7 +383,7 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body, #page-one, #page-two, #page-three, #page-four, #page-five {
+html, body, #page-one, #page-two, #page-three, #page-four, #page-five, #page-six {
   height: auto;
   min-height: 100vh;
   font-family: "Roboto Slab", serif; }
@@ -532,7 +532,7 @@ nav {
     padding-bottom: 8px;
     padding-left: 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: #F0EFEF;
     display: block;
     transition: 0.3s; }
@@ -569,7 +569,7 @@ nav {
   #home-top li {
     float: left; }
   #home-top li a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 16px;

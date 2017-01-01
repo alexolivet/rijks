@@ -74,7 +74,7 @@ function doSearch() {
                     if (img === null) { //if no images are returned then display alert
                         resultDiv4.innerHTML += "<p>No images for this search. Please Try again.</p>"
                     }
-                    ctx.drawImage(img, 0, 0, 393, 340); //border and canvas size
+                     ctx.drawImage(img,0,0,rImg.width,rImg.height,0,0,450,325);//set image and canvas size
                     $("#loader").hide();
                     $("#save-image").show();//show save image button
                 }, 1000); //timeout for image load to canvas - ends
@@ -127,10 +127,6 @@ canvas.addEventListener('mousedown', function(e) {
     isDrawing = true;
     startX = x;
     startY = y;
-    points.push({
-        x: x,
-        y: y
-    });
 });
 
 
@@ -175,10 +171,6 @@ canvas.addEventListener('mousemove', function(e) {
         startX = x;
         startY = y;
 
-        points.push({
-            x: x,
-            y: y
-        });
     }
 
 });

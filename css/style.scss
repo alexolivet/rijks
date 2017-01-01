@@ -99,7 +99,7 @@ $mq-700: "(max-width: 700px)";
 
 //min-height is set to make sure the div covers 100% of the viewport.
 //playing with the vh value allows for nice layout
-html, body, #page-one,#page-two, #page-three,#page-four,#page-five {
+html, body, #page-one,#page-two, #page-three,#page-four,#page-five,#page-six {
 	height:auto;
 	min-height: 100vh;
   font-family: $font-roboto;
@@ -199,7 +199,6 @@ a{text-decoration:none; }
   padding-top:2em;
 
 }
-
 //menu
 nav {
   background-color: $indigo;
@@ -271,7 +270,7 @@ nav {
     padding-bottom:8px;
     padding-left:32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: $grey;
     display: block;
     transition: 0.3s;
@@ -322,7 +321,7 @@ nav {
   }
 
   li a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 16px;
