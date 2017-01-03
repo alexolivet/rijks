@@ -45,12 +45,17 @@ if( empty($errors))
 	<br>
 	<p>We hope you had a great time playing with the APP.</p>
 	<br>
-	<p>You hve selected this work of art(see link below).</p>
+	<p>You have selected the following work of art(see link below).</p>
 	<p>This information is what you need to access the image directly on the <a href=\"https://www.rijksmuseum.nl/en/rijksstudio/\">Rijksmuseum Online Collection</a> site.</p>
-	<h1>URL to Rijksstudio: <br>\n $message</h1>
+	<p>URL to Rijksstudio: <br>\n $message</p>
+	<p>The URL will allow you to get the image directly from the Rijksmuseum</p>
+	<br>
 	<p>Object number: \n $message1<p>
+	<p>The object number allows yo to search for the specific work of art </p>
+	<br>
 	<p>Title: \n $message2</p>
 	<p>Artist: \n $message3</p>
+	<br>
 	<p>Note that all the images are coming from the <a href=\"https://www.rijksmuseum.nl/en/rijksstudio/\">Rijksmuseum Online Collection</a>.</p>
 	<br>
 	<p>Please note that the draw-like-masters APP was not developed by, for, through the intercession of, or with the support of the Rijksmuseum.</p>

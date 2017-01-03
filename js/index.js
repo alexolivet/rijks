@@ -56,10 +56,12 @@ function popup() {
 
     var title = "<h1>draw-like-masters</h1>   <h2>An online drawing App by <a href='http://www.elwebman.nl' target='_blank'><span>elwebman.nl</span></a></h2>";
 
-    var text = "<div><p>- Fun and completely free.</p> <p>- Drawing and learning made easy.</p><p>This is an initiative to get the whole world drawing.</p></div>";
-    var text2 = "<div><p>You can access the APP right <a href='drawing.html' target='_blank'><span>here</span></a>.</p></div>";
+    var text = "<div><p>-Fun and completely free.</p> <p>- Drawing and learning made easy.</p><p>This is an initiative to get the whole world drawing.</p></div>";
+    var text1 = "<div><p> -The draw-like-masters APP has been developed using the <a href='https://www.rijksmuseum.nl/en/api' target='_blank'><span>Rijksmuseum API.</span></a></p></div>";
+    var text2 = "<br><p>-You can access the APP right <a href='drawing.html' target='_blank'><span>here</span></a>.</p>";
 
-    box.html(title + text + text2);
+
+    box.html(title + text + text1 + text2);
     //close icon
     var clos = $('<div id="close">x</div>').appendTo(box);
 
