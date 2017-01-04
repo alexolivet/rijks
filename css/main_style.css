@@ -572,7 +572,7 @@ nav {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 5px;
     text-decoration: none; }
   #home-top li a:hover {
     background-color: #111111; }
@@ -746,20 +746,20 @@ input[type="search"] {
   opacity: 1; }
 
 .social {
-  font-size: 30px; }
+  font-size: 50px; }
   .social ul {
     list-style: outside none none;
-    margin: 0 auto;
-    padding: 0; }
+    margin: 0 auto; }
   .social li {
-    float: left; }
+    float: left;
+    padding: 10px; }
   .social li a {
     display: inline-block;
-    color: white;
     text-align: center;
     padding: 16px;
     text-decoration: none; }
   .social li a:hover {
-    background-color: #111111; }
+    background-color: #fff;
+    border-radius: 5px; }
 
 /*# sourceMappingURL=main_style.css.map */
