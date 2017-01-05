@@ -1,5 +1,5 @@
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -386,7 +386,8 @@ table {
 html, body, #page-one, #page-two, #page-three, #page-four, #page-five, #page-six {
   height: auto;
   min-height: 100vh;
-  font-family: "Roboto Slab", serif; }
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500; }
 
 /*GLOBALS*/
 h2 {
@@ -426,35 +427,35 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
 
 #page-two {
   background-image: url("../images/section1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
 
 #page-three {
   background-image: url("../images/section3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
 
 #page-four {
   background-image: url("../images/section4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
 
 #page-six {
   background-image: url("../images/section5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
   #page-six textarea {
     width: 200px;
     min-height: 70px;
@@ -468,7 +469,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 5px solid #fff; }
+  border: 5px solid #F0EFEF; }
 
 #page-one, #page-two, #page-three, #page-four, #page-five, #page-six {
   padding-top: 2em; }
@@ -575,7 +576,7 @@ nav {
     padding: 5px;
     text-decoration: none; }
   #home-top li a:hover {
-    background-color: #111111; }
+    background-color: #000; }
 
 canvas {
   position: relative;
@@ -629,7 +630,7 @@ canvas {
 #rijks-logo {
   width: 30%;
   vertical-align: middle;
-  border: 1px solid #999999;
+  border: 1px solid;
   border-radius: 5px; }
 
 @media (max-width: 700px) {
@@ -640,10 +641,10 @@ input[type="search"] {
   -webkit-appearance: textfield; }
 
 .loader {
-  border-top: 15px solid white;
-  border-bottom: 15px solid white;
-  border-left: 15px solid #3C8DC5;
-  border-right: 15px solid #3C8DC5;
+  border-top: 15px solid #fff;
+  border-bottom: 15px solid #fff;
+  border-left: 15px solid #2196F3;
+  border-right: 15px solid #2196F3;
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -677,25 +678,25 @@ input[type="search"] {
   height: 300px;
   margin: -110px 0px 0px -220px;
   background: #fff;
-  color: #666;
+  color: #666666;
   overflow: hidden; }
 
 .pop span {
   text-shadow: none;
-  color: #066;
+  color: #006666;
   padding: 0; }
 
 .pop h2 {
   text-shadow: none;
   font-size: 16px;
-  color: #666;
+  color: #666666;
   text-align: center; }
 
 .pop h1 {
   font-size: 40px;
   font-family: "Orange_Juice";
   margin-bottom: 4px;
-  color: #666;
+  color: #666666;
   margin-bottom: 14px;
   text-align: center; }
 
@@ -746,7 +747,7 @@ input[type="search"] {
   opacity: 1; }
 
 .social {
-  font-size: 50px; }
+  font-size: 40px; }
   .social ul {
     list-style: outside none none;
     margin: 0 auto; }
@@ -756,10 +757,22 @@ input[type="search"] {
   .social li a {
     display: inline-block;
     text-align: center;
-    padding: 16px;
+    padding: 10px;
     text-decoration: none; }
   .social li a:hover {
     background-color: #fff;
     border-radius: 5px; }
+
+#list1 {
+  position: relative;
+  padding: 10%; }
+  #list1 ol {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 3em;
+    padding: 0; }
+  #list1 li {
+    margin-bottom: 10px;
+    padding-left: 0.5em; }
 
 /*# sourceMappingURL=main_style.css.map */
