@@ -35,13 +35,21 @@ $(document).ready(function() { //start document ready
 
 //open slide menu
 //the desired width can be changed here
+//added z-index to fix the issue with the buttons
 function openNav() {
-        document.getElementById("mySidenav").style.width = "100%";
-    }
-    //close slide menu
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("zindex").style.zIndex = "-1";
+    document.getElementById("zindex1").style.zIndex = "-1";
+    document.getElementById("zindex2").style.zIndex = "-1";
 }
+    //close slide menu
+    //added z-index to fix the issue with the buttons
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("zindex").style.zIndex = "1";
+        document.getElementById("zindex1").style.zIndex = "1";
+        document.getElementById("zindex2").style.zIndex = "1";
+    }
 
 
 

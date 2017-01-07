@@ -235,17 +235,17 @@
      }
    }
 
-
     //side nav
     .sidenav {
+      position: fixed;
       height: 100%;
       width: 0;
-      position: fixed;
-      z-index: 10;
       top: 0;
       left: 0;
       background-color: $black;
       overflow-x: hidden;
+      overflow-y: hidden;
+
       transition: 0.5s;
       padding-top: 60px;
       a {
@@ -273,7 +273,7 @@
 
 
     .row [class^="col"]{
-      background-color:orange;
+      background-color: $orange;
       p {
         padding:10px;
         line-height: 1.85em;
@@ -348,6 +348,7 @@
         clear: both;
       }
       .tools {
+        position: relative;
         font-family: $font-orange;
         cursor: pointer;
         width: 100%;
@@ -418,7 +419,6 @@
     .overlay{
       position:fixed;
       background:rgba(0,0,0,0.8);
-      z-index:100;
       top:0;
       left:0;
       width:100%;
