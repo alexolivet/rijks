@@ -614,7 +614,16 @@ canvas {
   width: 100%;
   height: 100%;
   font-size: 30px;
-  background-color: #F44336; }
+  background-color: #F44336;
+  -webkit-animation-duration: 6s;
+  -moz-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-iteration-count: 10;
+  -moz-animation-iteration-count: 10;
+  animation-iteration-count: 10; }
 
 #query {
   font-weight: bold;
@@ -638,7 +647,11 @@ canvas {
     display: none; } }
 
 input[type="search"] {
-  -webkit-appearance: textfield; }
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  -ms-appearance: textfield;
+  -o-appearance: textfield;
+  appearance: textfield; }
 
 .loader {
   border-top: 15px solid #fff;
@@ -649,6 +662,8 @@ input[type="search"] {
   width: 25px;
   height: 25px;
   float: right;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite; }
 
 @keyframes spin {
@@ -715,34 +730,32 @@ input[type="search"] {
 .pop h1, .pop h2 {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 /*hide left*/
 .pop h1 {
-  -moz-transform: translateX(-200px);
   -webkit-transform: translateX(-200px);
-  -o-transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
   -ms-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
   transform: translateX(-200px);
   opacity: 0; }
 
 /*hide right*/
 .pop h2 {
-  -moz-transform: translateX(200px);
   -webkit-transform: translateX(200px);
-  -o-transform: translateX(200px);
+  -moz-transform: translateX(200px);
   -ms-transform: translateX(200px);
+  -o-transform: translateX(200px);
   transform: translateX(200px);
   opacity: 0; }
 
 /*Slide left > right || right > left*/
 .pop h1.animationActive, .pop h2.animationActive {
-  -moz-transform: translateX(0px);
   -webkit-transform: translateX(0px);
-  -o-transform: translateX(0px);
+  -moz-transform: translateX(0px);
   -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
   transform: translateX(0px);
   opacity: 1; }
 

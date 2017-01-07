@@ -6,6 +6,17 @@ $(document).ready(function() { //start document ready
     });
 
 
+    // var animationName = 'animated shake'
+    // var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+    // $('a.button').on('click', funtion(){
+    //     $('input[name=firstname]').addClass(animationName).one(animationEnd,
+    //         function(){
+    //             $(this).removeClass(animationName)
+    //         });
+
+    // });
+
+
 }); // end document ready
 
 

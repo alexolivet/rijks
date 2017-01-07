@@ -3,7 +3,7 @@
     @import "style-grid";
     @import "bourbon/bourbon";
     @import "fonts";
-   
+
     //box sizing mixin
     @mixin box-sizing($box-model) {
       -webkit-box-sizing: $box-model;
@@ -354,6 +354,10 @@
         height: 100%;
         font-size: 30px;
         background-color: $red;
+        @include animation-duration(6s);
+        @include animation-delay (2s);
+        @include animation-iteration-count(10);
+
       }
 
 
@@ -386,7 +390,7 @@
    }
     //this sets the appearance to be the same in all browsers
     input[type="search"] {
-      -webkit-appearance: textfield;
+      @include appearance(textfield);
     }
 
 
@@ -400,7 +404,7 @@
       width: 25px;
       height: 25px;
       float: right;
-      animation: spin 2s linear infinite;
+      @include animation( spin 2s linear infinite);
     }
 
     @keyframes spin {
@@ -464,43 +468,29 @@
         }
 
         .pop h1, .pop h2{
-          -webkit-transition: all 0.5s ease;
-          -moz-transition:    all 0.5s ease;
-          -o-transition:      all 0.5s ease;
-          -ms-transition:     all 0.5s ease;
-          transition:         all 0.5s ease;  
+          @include transition(all 0.5s ease);
+
         }
 
 
         /*hide left*/
         .pop h1{
-          -moz-transform: translateX(-200px);
-          -webkit-transform: translateX(-200px);
-          -o-transform: translateX(-200px);
-          -ms-transform: translateX(-200px);
-          transform: translateX(-200px);
-          opacity:0;
-        }
+         @include  transform( translateX(-200px));
+         opacity:0;
+       }
 
-        /*hide right*/
-        .pop h2{
-          -moz-transform: translateX(200px);
-          -webkit-transform: translateX(200px);
-          -o-transform: translateX(200px);
-          -ms-transform: translateX(200px);
-          transform: translateX(200px); 
-          opacity:0;
-        }
+       /*hide right*/
+       .pop h2{
+        @include  transform( translateX(200px));
+        
+        opacity:0;
+      }
 
-        /*Slide left > right || right > left*/
-        .pop h1.animationActive, .pop h2.animationActive {
-          -moz-transform: translateX(0px);
-          -webkit-transform: translateX(0px);
-          -o-transform: translateX(0px);
-          -ms-transform: translateX(0px);
-          transform: translateX(0px); 
-          opacity:1;
-        }
+      /*Slide left > right || right > left*/
+      .pop h1.animationActive, .pop h2.animationActive {
+      @include  transform( translateX(0px));
+        opacity:1;
+      }
 
     //social icons
     .social{
