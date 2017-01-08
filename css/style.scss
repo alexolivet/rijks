@@ -71,7 +71,7 @@
 
     //media queries
     $mq-1024: "(max-width: 1024px)";
-    $mq-700: "(max-width: 700px)";
+    $mq-768: "(max-width: 768px)";
 
 
     *,
@@ -103,7 +103,7 @@
         font-size:3em;
 
       }
-      @media #{$mq-700} {
+      @media #{$mq-768} {
         font-size:2em;
 
       }
@@ -119,7 +119,7 @@
       @media #{$mq-1024} {
         font-size:2em;
       }
-      @media #{$mq-700} {
+      @media #{$mq-768} {
         font-size:1em;
       }
     }
@@ -324,7 +324,7 @@
       background-image: url('../images/canvas-img-1.png');
       background-size: contain;
       background-repeat:no-repeat;
-        @media #{$mq-700} {//image to change on screen size
+        @media #{$mq-768} {//image to change on screen size
           background-image: url('../images/canvas-img-mobile.png');
         }
       }
@@ -383,7 +383,7 @@
 
     //entire section to be removed in small screen
     .mobile{
-      @media #{$mq-700} {
+      @media #{$mq-768} {
        display:none;
      }
    }
@@ -421,7 +421,7 @@
       left:0;
       width:100%;
       height:100%;
-      @media #{$mq-700} {
+      @media #{$mq-768} {
        display:none;
      }  
    }

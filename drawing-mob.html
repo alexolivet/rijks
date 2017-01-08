@@ -48,6 +48,14 @@
     ga('send', 'pageview');
     </script>
     <!-- google anaylytics ends -->
+     <!-- URL Redirect Based on Screen Width -->
+    <script type="text/javascript">
+    $(window).on('load resize',function(){
+        if($(window).width() > 768){
+            window.location = "http://www.draw-like-masters.elwebman.nl/drawing.html"
+        }
+    });
+</script>
   </head>
 
   <body id="page-five">
