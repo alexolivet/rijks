@@ -244,8 +244,6 @@
       left: 0;
       background-color: $black;
       overflow-x: hidden;
-      overflow-y: hidden;
-
       transition: 0.5s;
       padding-top: 60px;
       a {
@@ -254,7 +252,7 @@
         padding-bottom:8px;
         padding-left:32px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
         color: $grey;
         display: block;
         transition: 0.3s;
@@ -488,7 +486,7 @@
 
       /*Slide left > right || right > left*/
       .pop h1.animationActive, .pop h2.animationActive {
-      @include  transform( translateX(0px));
+        @include  transform( translateX(0px));
         opacity:1;
       }
 

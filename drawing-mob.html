@@ -30,8 +30,6 @@
     <link rel="stylesheet" href="css/main_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- a helper script for vaidating the form-->
-    <script src="js/email_validator.js"></script>
     <!-- google anaylytics starts -->
     <script>
     (function(i, s, o, g, r, a, m) {
@@ -50,15 +48,6 @@
     ga('send', 'pageview');
     </script>
     <!-- google anaylytics ends -->
-    <!-- URL Redirect Based on Screen Width -->
-    <script type="text/javascript">
-    $(window).on('load resize',function(){
-        if($(window).width() < 768){
-            window.location = "http://www.draw-like-masters.elwebman.nl/drawing-mob.html"
-        }
-    });
-</script>
-
   </head>
 
   <body id="page-five">
@@ -70,17 +59,7 @@
     <div class="clearfix wrap">
       <!--Column#1-->
       <div class="col col5">
-        <div class="box box7">
-          <div class="loader" id="loader"></div>
-          <div id="result"></div>
-          <!--  will display text if nothing is found -->
-          <div id="result4"></div>
-          <p id="drawing1"></p>
-          <canvas id="myCanvas" width="450" height="325">Your browser does not support the HTML5 "canvas" tag.</canvas>
-        </div>
-        <!--Column#2-->
-        <div class="col col4">
-          <div class="box box3">
+        <div class="box box3">
             <!-- search field -->
             <div class="division">
               <input id="query" type="search" placeholder="Artist, Painting, or anything!">
@@ -92,6 +71,16 @@
               <button id='reset-canvas' class="tools">Reset Canvas</button>
             </div>
           </div>
+        <div class="box box7">
+          <div class="loader" id="loader"></div>
+          <div id="result"></div>
+          <!--  will display text if nothing is found -->
+          <div id="result4"></div>
+          <p id="drawing1"></p>
+          <canvas id="myCanvas" width="450" height="325">Your browser does not support the HTML5 "canvas" tag.</canvas>
+        </div>
+        <!--Column#2-->
+        <div class="col col4">
           <div class="box box2">
             <div class="division">
               Artist:
@@ -117,7 +106,9 @@
           </div>
         </div>
       </div>
-      <!--Column#4-->>
+      <!--Column#4-->
+      <!--not on mobile starts-->
+      <div class="mobile">
         <div class="col col2">
           <div class="box box6">
             <ol id="list1">
@@ -173,14 +164,8 @@
               </form>
             </div>
           </div>
-        <!-- start email validator -->
-        <script>
-        var frmvalidator = new Validator("contactform-image");
-        frmvalidator.addValidation("name", "req", "Please provide your name");
-        frmvalidator.addValidation("email", "req", "Please provide your email");
-        frmvalidator.addValidation("email", "email", "Please enter a valid email address");
-        </script>
-        <!-- end email validator -->
+          <!--not on mobile ends-->
+        </div>
         <script type="text/javascript" src="js/script.js"></script>
         <script src="js/jquery.js"></script>
       </body>
