@@ -3,14 +3,13 @@ $errors = '';
 $myemail = 'alex@elwebman.nl';//<-----Put Your email address here.
 if(empty($_POST['message']))
 {
-	$errors .= "\n Error: all fields are required. You need to generate positive words.";
+	$errors .= "\n Error: all fields are required. You need to add comments.";
 }
 
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
 $message = $_POST['message'];
 $stickers=$_POST['message_1'];
-$quantity=$_POST['quantity'];
 
 
 if( empty($errors))

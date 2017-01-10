@@ -1,5 +1,5 @@
   <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
 
   <head>
 
@@ -45,7 +45,6 @@
       a.src = g;
       m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
     ga('create', 'UA-21068000-3', 'auto');
     ga('send', 'pageview');
     </script>
@@ -53,11 +52,11 @@
     <!-- URL Redirect Based on Screen Width -->
     <script type="text/javascript">
     $(window).on('load resize',function(){
-        if($(window).width() < 768){
-            window.location = "http://www.draw-like-masters.elwebman.nl/drawing-mob.html"
-        }
+      if($(window).width() < 768){
+        window.location = "http://www.draw-like-masters.elwebman.nl/drawing-mob.html"
+      }
     });
-</script>
+    </script>
 
   </head>
 
@@ -118,61 +117,61 @@
         </div>
       </div>
       <!--Column#4-->
-        <div class="col col2">
-          <div class="box box6">
-            <ol id="list1">
-              <li>We email you the original image URL to your email.
+      <div class="col col2">
+        <div class="box box6">
+          <ol id="list1">
+            <li>We email you the original image URL to your email.
+              <li>&nbsp;</li>
+              <li>Simply follow the form instructions:
                 <li>&nbsp;</li>
-                <li>Simply follow the form instructions:
-                  <li>&nbsp;</li>
-                  <li>*Click on 'Save Image.</li>
-                  <li>*Fill in your name.</li>
-                  <li>*Fill in a valid email address</li>
-                  <li>*Click on Send</li>
-                </ol>
-              </div>
-              <div class="box box3">
-                <button id="save-image" class="tools  animated shake">Save Image</button>
-              </div>
+                <li>*Click on 'Save Image.</li>
+                <li>*Fill in your name.</li>
+                <li>*Fill in a valid email address</li>
+                <li>*Click on Send</li>
+              </ol>
             </div>
-            <!--Column#5-->
-            <div class="col col3">
-              <div class="box">
-                <p>The draw-like-masters APP was not developed by, for, through the intercession of, or with the support of the Rijksmuseum.
-                </p>
-              </div>
-              <form method="POST" name="contactform-image" action="js/contact-form-image.php" id="form_image">
-                <div class="box box6">
-                  <img id="canvas-image">
-                </div>
-                <!--Column#6-->
-                <div class="col col6">
-                  <div class="box box2">Your Name:
-                    <br>
-                    <label id='name'></label>
-                    <br>
-                    <input type="text" name="name">
-                  </div>
-                  <div class="box box2">Your Email Address:
-                    <br>
-                    <label id='email'></label>
-                    <br>
-                    <input type="text" name="email">
-                    <textarea name="message" id="result6" class="hidden"></textarea>
-                    <textarea name="message1" id="result7" class="hidden"></textarea>
-                    <textarea name="message2" id="result8" class="hidden"></textarea>
-                    <textarea name="message3" id="result9" class="hidden"></textarea>
-                  </div>
-                </div>
-                <!--Column#7-->
-                <div class="col col4">
-                  <div class="box box4">
-                    <input type="submit" value="Send" class="tools">
-                  </div>
-                </div>
-              </form>
+            <div class="box box3">
+              <button id="save-image" class="tools  animated shake">Save Image</button>
             </div>
           </div>
+          <!--Column#5-->
+          <div class="col col3">
+            <div class="box">
+              <p>The draw-like-masters APP was not developed by, for, through the intercession of, or with the support of the Rijksmuseum.
+              </p>
+            </div>
+            <form method="POST" name="contactform-image" action="js/contact-form-image.php" id="form_image">
+              <div class="box box6">
+                <img id="canvas-image">
+              </div>
+              <!--Column#6-->
+              <div class="col col6">
+                <div class="box box2">Your Name:
+                  <br>
+                  <label id='name'></label>
+                  <br>
+                  <input type="text" name="name">
+                </div>
+                <div class="box box2">Your Email Address:
+                  <br>
+                  <label id='email'></label>
+                  <br>
+                  <input type="text" name="email">
+                  <textarea name="message" id="result6" class="hidden"></textarea>
+                  <textarea name="message1" id="result7" class="hidden"></textarea>
+                  <textarea name="message2" id="result8" class="hidden"></textarea>
+                  <textarea name="message3" id="result9" class="hidden"></textarea>
+                </div>
+              </div>
+              <!--Column#7-->
+              <div class="col col4">
+                <div class="box box4">
+                  <input type="submit" value="Send" class="tools">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
         <!-- start email validator -->
         <script>
         var frmvalidator = new Validator("contactform-image");
