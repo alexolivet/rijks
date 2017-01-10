@@ -1,5 +1,5 @@
     //variable to build url to rijksmuseum
-    var baseURL = "https://www.rijksmuseum.nl/api/nl/collection/"
+    var baseURL = "https://www.rijksmuseum.nl/api/en/collection/"
     var apiKey = "?key=r4nzV2tL&imgonly=True&format=json&ps=1"
     var apiKey1 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=2"
     var apiKey2 = "?key=r4nzV2tL&imgonly=True&format=json&ps=1&p=3"
